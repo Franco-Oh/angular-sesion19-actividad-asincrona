@@ -1,23 +1,20 @@
 <div class="container">
-    <div class="row my-5">
-        <input type="text" class="col-9">
-        <button class="btn btn-secondary col-3">Buscar</button>
+    <div class="row justify-content-evenly my-5">
+        <input type="text" class="col-9" placeholder="Busca tu pokemon">
+        <button class="btn btn-secondary col-2">Buscar</button>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
         <!-- <div *ngFor="let poke of data" class="col-2 m-4">
             <div class="border border-dark-subtle border-4 rounded-4 p-4">
                 <h4>{{poke.name | uppercase}}</h4>
                 <img src="{{poke.image}}" alt="{{poke.name}}" class="">
             </div>
         </div> -->
-        <div class="">
-
-        </div>
-        <div *ngFor="let poke of data" class="card m-3 text-center" style="width: 18rem;">
+        <a *ngFor="let poke of data" class="card m-3 text-center rounded-4" style="width: 18rem;" [routerLink]="['/pokemon', poke.position]">
             <img src="{{poke.image}}" class="card-img-top" alt="{{poke.name}}">
             <div class="card-body">
-                <h4>{{poke.name | uppercase}}</h4>
+                <h4>{{poke.position}} - {{poke.name | uppercase}}</h4>
             </div>
-        </div>
+        </a>
     </div>
 </div>

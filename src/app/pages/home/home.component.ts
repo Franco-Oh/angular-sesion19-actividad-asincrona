@@ -18,11 +18,8 @@ export class HomeComponent implements OnInit {
   }
 
   getPokemons(){
-
     let pokemonData;
-
     for(let i = 1; i < 152; i++){
-
       this.pokedex.getPokemon(String(i)).subscribe(
         res => {
           pokemonData = {
