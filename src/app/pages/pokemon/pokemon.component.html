@@ -1,1 +1,23 @@
-<p>pokemon works!</p>
+<div class="container row">
+    <div class="card m-3 text-center rounded-4" style="width: 18rem;">
+        <div class="card-body m-0 p-0 mt-4">
+            <h4 class="card-title m-0 p-0">{{pokeInfo.name | uppercase}}</h4>
+            <p class="m-0 p-0">Order: {{pokeInfo.id}}</p>
+        </div>
+        <img src="{{pokeInfo.sprites.front_default}}" class="card-img-bottom" alt="{{pokeInfo.name}}">
+    </div>
+    <div class="col-3">
+        <p>Abilities:</p>
+        <ul class="text-break">
+            <li *ngFor="let dato of pokeInfo.abilities">{{dato.ability.name | uppercase}}</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <p>Moves:</p>
+        <ol class="text-break">
+            <li *ngFor="let dato of pokeInfo.moves">{{dato.move.name | uppercase}}</li>
+        </ol>
+    </div>
+    
+    <button class="btn btn-danger" routerLink="/home">Volver</button>
+</div>

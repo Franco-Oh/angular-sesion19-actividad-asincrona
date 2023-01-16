@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
             name: res.name
           }
           this.data.push(pokemonData)
-          console.log(res);
         },
         err => {
   

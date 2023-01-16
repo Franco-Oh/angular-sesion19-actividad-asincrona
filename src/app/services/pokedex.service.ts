@@ -10,9 +10,9 @@ export class PokedexService {
 
   constructor(private http:HttpClient) {
     console.log('Pokedex activada!');
-   }
+  }
 
-   getPokemon(index: string){
+  getPokemon(index: string){
     // let heades = new HttpHeaders().set('Type-content', 'aplication/json');
     return this.http.get<any>(`${this.urlAPI}${index}`);
   }

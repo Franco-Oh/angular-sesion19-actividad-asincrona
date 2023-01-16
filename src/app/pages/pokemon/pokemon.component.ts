@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PokedexService } from 'src/app/services/pokedex.service';
+import { ActivatedRoute, } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonComponent implements OnInit {
 
-  constructor() { }
+  //Base de datos
+  pokeInfo:any=[];
+
+  //Para seleccionar el numero de detalle
+  detalles!:any;
+
+  constructor(private rutaActiva:ActivatedRoute, private pokedex:PokedexService) { }
 
   ngOnInit(): void {
+    this.detalles = this.rutaActiva.snapshot.params['id']; //para obtener los parametros de detalles
+    console.log(this.detalles);
+    let pokemonData;
+    this.pokedex.getPokemon(this.detalles).subscribe( pokedex => this.pokeInfo = pokedex) //base de datos
   }
 
 }
