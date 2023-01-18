@@ -1,23 +1,28 @@
-<div class="container row">
-    <div class="card m-3 text-center rounded-4" style="width: 18rem;">
-        <div class="card-body m-0 p-0 mt-4">
-            <h4 class="card-title m-0 p-0">{{pokeInfo.name | uppercase}}</h4>
-            <p class="m-0 p-0">Order: {{pokeInfo.id}}</p>
+<div class="container text-center justify-content-center mt-3">
+    <div class="row  justify-content-evenly align-items-center mx-2">
+        <div class="card m-3 text-center rounded-4 col-12 col-md-3">
+            <div class="card-body m-0 p-0 mt-4">
+                <h4 class="card-title m-0 p-0">{{pokeInfo.name | uppercase}}</h4>
+                <p class="m-0 p-0">Order: {{pokeInfo.id}}</p>
+            </div>
+            <img src="{{pokeInfo.sprites.front_default}}" class="card-img-bottom" alt="{{pokeInfo.name}}">
         </div>
-        <img src="{{pokeInfo.sprites.front_default}}" class="card-img-bottom" alt="{{pokeInfo.name}}">
+        <div class="col-md-8">
+            <p>Abilities:</p>
+            <ul class="text-break">
+                <li *ngFor="let dato of pokeInfo.abilities">{{dato.ability.name | uppercase}}</li>
+            </ul>
+        </div>
     </div>
-    <div class="col-3">
-        <p>Abilities:</p>
-        <ul class="text-break">
-            <li *ngFor="let dato of pokeInfo.abilities">{{dato.ability.name | uppercase}}</li>
-        </ul>
+    <div class="row">
+        <div class="col-12">
+            <p>Moves:</p>
+            <ol class="text-break">
+                <li *ngFor="let dato of pokeInfo.moves">{{dato.move.name | uppercase}}</li>
+            </ol>
+        </div>
     </div>
-    <div class="col-3">
-        <p>Moves:</p>
-        <ol class="text-break">
-            <li *ngFor="let dato of pokeInfo.moves">{{dato.move.name | uppercase}}</li>
-        </ol>
+    <div class="row justify-content-center my-3">
+        <button class="btn btn-danger col-2" routerLink="/home">Volver</button>
     </div>
-    
-    <button class="btn btn-danger" routerLink="/home">Volver</button>
 </div>

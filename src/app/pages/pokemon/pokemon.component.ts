@@ -20,7 +20,6 @@ export class PokemonComponent implements OnInit {
   ngOnInit(): void {
     this.detalles = this.rutaActiva.snapshot.params['id']; //para obtener los parametros de detalles
     console.log(this.detalles);
-    let pokemonData;
     this.pokedex.getPokemon(this.detalles).subscribe( pokedex => this.pokeInfo = pokedex) //base de datos
   }
 

@@ -4,18 +4,21 @@ import { HomeComponent } from './home/home.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchPipe } from '../pipes/search.pipe';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    PokemonComponent
+    PokemonComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     HomeComponent,
